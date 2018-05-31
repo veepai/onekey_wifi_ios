@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B71E41DB1D3CE608004306DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E41DA1D3CE608004306DC /* main.m */; };
+		B71E41DE1D3CE608004306DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E41DD1D3CE608004306DC /* AppDelegate.m */; };
+		B71E41E11D3CE608004306DC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E41E01D3CE608004306DC /* ViewController.m */; };
+		B71E41E41D3CE608004306DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71E41E21D3CE608004306DC /* Main.storyboard */; };
+		B71E41E71D3CE608004306DC /* OneKeyWifi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B71E41E51D3CE608004306DC /* OneKeyWifi.xcdatamodeld */; };
+		B71E41E91D3CE608004306DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71E41E81D3CE608004306DC /* Assets.xcassets */; };
+		B71E41EC1D3CE608004306DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71E41EA1D3CE608004306DC /* LaunchScreen.storyboard */; };
+		B71E41F71D3CE608004306DC /* OneKeyWifiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E41F61D3CE608004306DC /* OneKeyWifiTests.m */; };
+		B71E42021D3CE608004306DC /* OneKeyWifiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E42011D3CE608004306DC /* OneKeyWifiUITests.m */; };
+		B71E42111D3CE767004306DC /* libVoiceEncoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B71E42101D3CE767004306DC /* libVoiceEncoder.a */; };
+		B71E42171D3CE92F004306DC /* libiot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B71E42131D3CE92F004306DC /* libiot.a */; };
+		B71E42181D3CE92F004306DC /* SmartLink.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E42151D3CE92F004306DC /* SmartLink.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B71E41F31D3CE608004306DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B71E41CE1D3CE608004306DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B71E41D51D3CE608004306DC;
+			remoteInfo = OneKeyWifi;
+		};
+		B71E41FE1D3CE608004306DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B71E41CE1D3CE608004306DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B71E41D51D3CE608004306DC;
+			remoteInfo = OneKeyWifi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B71E41D61D3CE608004306DC /* OneKeyWifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneKeyWifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71E41DA1D3CE608004306DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B71E41DC1D3CE608004306DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B71E41DD1D3CE608004306DC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B71E41DF1D3CE608004306DC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B71E41E01D3CE608004306DC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B71E41E31D3CE608004306DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B71E41E61D3CE608004306DC /* OneKeyWifi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneKeyWifi.xcdatamodel; sourceTree = "<group>"; };
+		B71E41E81D3CE608004306DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B71E41EB1D3CE608004306DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B71E41ED1D3CE608004306DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B71E41F21D3CE608004306DC /* OneKeyWifiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneKeyWifiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71E41F61D3CE608004306DC /* OneKeyWifiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneKeyWifiTests.m; sourceTree = "<group>"; };
+		B71E41F81D3CE608004306DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B71E41FD1D3CE608004306DC /* OneKeyWifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneKeyWifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71E42011D3CE608004306DC /* OneKeyWifiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneKeyWifiUITests.m; sourceTree = "<group>"; };
+		B71E42031D3CE608004306DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B71E420F1D3CE744004306DC /* voiceEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = voiceEncoder.h; sourceTree = "<group>"; };
+		B71E42101D3CE767004306DC /* libVoiceEncoder.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVoiceEncoder.a; sourceTree = "<group>"; };
+		B71E42131D3CE92F004306DC /* libiot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libiot.a; sourceTree = "<group>"; };
+		B71E42141D3CE92F004306DC /* SmartLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartLink.h; sourceTree = "<group>"; };
+		B71E42151D3CE92F004306DC /* SmartLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartLink.m; sourceTree = "<group>"; };
+		B71E42161D3CE92F004306DC /* smtiot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smtiot.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B71E41D31D3CE608004306DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71E42171D3CE92F004306DC /* libiot.a in Frameworks */,
+				B71E42111D3CE767004306DC /* libVoiceEncoder.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71E41EF1D3CE608004306DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71E41FA1D3CE608004306DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B71E41CD1D3CE608004306DC = {
+			isa = PBXGroup;
+			children = (
+				B71E41D81D3CE608004306DC /* OneKeyWifi */,
+				B71E41F51D3CE608004306DC /* OneKeyWifiTests */,
+				B71E42001D3CE608004306DC /* OneKeyWifiUITests */,
+				B71E41D71D3CE608004306DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B71E41D71D3CE608004306DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B71E41D61D3CE608004306DC /* OneKeyWifi.app */,
+				B71E41F21D3CE608004306DC /* OneKeyWifiTests.xctest */,
+				B71E41FD1D3CE608004306DC /* OneKeyWifiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B71E41D81D3CE608004306DC /* OneKeyWifi */ = {
+			isa = PBXGroup;
+			children = (
+				B71E42121D3CE91B004306DC /* smartlink */,
+				B71E42101D3CE767004306DC /* libVoiceEncoder.a */,
+				B71E420F1D3CE744004306DC /* voiceEncoder.h */,
+				B71E41DC1D3CE608004306DC /* AppDelegate.h */,
+				B71E41DD1D3CE608004306DC /* AppDelegate.m */,
+				B71E41DF1D3CE608004306DC /* ViewController.h */,
+				B71E41E01D3CE608004306DC /* ViewController.m */,
+				B71E41E21D3CE608004306DC /* Main.storyboard */,
+				B71E41E81D3CE608004306DC /* Assets.xcassets */,
+				B71E41EA1D3CE608004306DC /* LaunchScreen.storyboard */,
+				B71E41ED1D3CE608004306DC /* Info.plist */,
+				B71E41E51D3CE608004306DC /* OneKeyWifi.xcdatamodeld */,
+				B71E41D91D3CE608004306DC /* Supporting Files */,
+			);
+			path = OneKeyWifi;
+			sourceTree = "<group>";
+		};
+		B71E41D91D3CE608004306DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B71E41DA1D3CE608004306DC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B71E41F51D3CE608004306DC /* OneKeyWifiTests */ = {
+			isa = PBXGroup;
+			children = (
+				B71E41F61D3CE608004306DC /* OneKeyWifiTests.m */,
+				B71E41F81D3CE608004306DC /* Info.plist */,
+			);
+			path = OneKeyWifiTests;
+			sourceTree = "<group>";
+		};
+		B71E42001D3CE608004306DC /* OneKeyWifiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B71E42011D3CE608004306DC /* OneKeyWifiUITests.m */,
+				B71E42031D3CE608004306DC /* Info.plist */,
+			);
+			path = OneKeyWifiUITests;
+			sourceTree = "<group>";
+		};
+		B71E42121D3CE91B004306DC /* smartlink */ = {
+			isa = PBXGroup;
+			children = (
+				B71E42131D3CE92F004306DC /* libiot.a */,
+				B71E42141D3CE92F004306DC /* SmartLink.h */,
+				B71E42151D3CE92F004306DC /* SmartLink.m */,
+				B71E42161D3CE92F004306DC /* smtiot.h */,
+			);
+			name = smartlink;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B71E41D51D3CE608004306DC /* OneKeyWifi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B71E42061D3CE608004306DC /* Build configuration list for PBXNativeTarget "OneKeyWifi" */;
+			buildPhases = (
+				B71E41D21D3CE608004306DC /* Sources */,
+				B71E41D31D3CE608004306DC /* Frameworks */,
+				B71E41D41D3CE608004306DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneKeyWifi;
+			productName = OneKeyWifi;
+			productReference = B71E41D61D3CE608004306DC /* OneKeyWifi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B71E41F11D3CE608004306DC /* OneKeyWifiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B71E42091D3CE608004306DC /* Build configuration list for PBXNativeTarget "OneKeyWifiTests" */;
+			buildPhases = (
+				B71E41EE1D3CE608004306DC /* Sources */,
+				B71E41EF1D3CE608004306DC /* Frameworks */,
+				B71E41F01D3CE608004306DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B71E41F41D3CE608004306DC /* PBXTargetDependency */,
+			);
+			name = OneKeyWifiTests;
+			productName = OneKeyWifiTests;
+			productReference = B71E41F21D3CE608004306DC /* OneKeyWifiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B71E41FC1D3CE608004306DC /* OneKeyWifiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B71E420C1D3CE608004306DC /* Build configuration list for PBXNativeTarget "OneKeyWifiUITests" */;
+			buildPhases = (
+				B71E41F91D3CE608004306DC /* Sources */,
+				B71E41FA1D3CE608004306DC /* Frameworks */,
+				B71E41FB1D3CE608004306DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B71E41FF1D3CE608004306DC /* PBXTargetDependency */,
+			);
+			name = OneKeyWifiUITests;
+			productName = OneKeyWifiUITests;
+			productReference = B71E41FD1D3CE608004306DC /* OneKeyWifiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B71E41CE1D3CE608004306DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = VSTARTCAM;
+				TargetAttributes = {
+					B71E41D51D3CE608004306DC = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = FNE2A6M8T3;
+					};
+					B71E41F11D3CE608004306DC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B71E41D51D3CE608004306DC;
+					};
+					B71E41FC1D3CE608004306DC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B71E41D51D3CE608004306DC;
+					};
+				};
+			};
+			buildConfigurationList = B71E41D11D3CE608004306DC /* Build configuration list for PBXProject "OneKeyWifi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B71E41CD1D3CE608004306DC;
+			productRefGroup = B71E41D71D3CE608004306DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B71E41D51D3CE608004306DC /* OneKeyWifi */,
+				B71E41F11D3CE608004306DC /* OneKeyWifiTests */,
+				B71E41FC1D3CE608004306DC /* OneKeyWifiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B71E41D41D3CE608004306DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71E41EC1D3CE608004306DC /* LaunchScreen.storyboard in Resources */,
+				B71E41E91D3CE608004306DC /* Assets.xcassets in Resources */,
+				B71E41E41D3CE608004306DC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71E41F01D3CE608004306DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71E41FB1D3CE608004306DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B71E41D21D3CE608004306DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71E42181D3CE92F004306DC /* SmartLink.m in Sources */,
+				B71E41E11D3CE608004306DC /* ViewController.m in Sources */,
+				B71E41E71D3CE608004306DC /* OneKeyWifi.xcdatamodeld in Sources */,
+				B71E41DE1D3CE608004306DC /* AppDelegate.m in Sources */,
+				B71E41DB1D3CE608004306DC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71E41EE1D3CE608004306DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71E41F71D3CE608004306DC /* OneKeyWifiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B71E41F91D3CE608004306DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71E42021D3CE608004306DC /* OneKeyWifiUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B71E41F41D3CE608004306DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B71E41D51D3CE608004306DC /* OneKeyWifi */;
+			targetProxy = B71E41F31D3CE608004306DC /* PBXContainerItemProxy */;
+		};
+		B71E41FF1D3CE608004306DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B71E41D51D3CE608004306DC /* OneKeyWifi */;
+			targetProxy = B71E41FE1D3CE608004306DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B71E41E21D3CE608004306DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B71E41E31D3CE608004306DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B71E41EA1D3CE608004306DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B71E41EB1D3CE608004306DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B71E42041D3CE608004306DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B71E42051D3CE608004306DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B71E42071D3CE608004306DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = OneKeyWifi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OneKeyWifi",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eye4ZX.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B71E42081D3CE608004306DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = OneKeyWifi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OneKeyWifi",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eye4ZX.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B71E420A1D3CE608004306DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OneKeyWifiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OneKeyWifiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneKeyWifi.app/OneKeyWifi";
+			};
+			name = Debug;
+		};
+		B71E420B1D3CE608004306DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OneKeyWifiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OneKeyWifiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OneKeyWifi.app/OneKeyWifi";
+			};
+			name = Release;
+		};
+		B71E420D1D3CE608004306DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OneKeyWifiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OneKeyWifiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OneKeyWifi;
+			};
+			name = Debug;
+		};
+		B71E420E1D3CE608004306DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OneKeyWifiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OneKeyWifiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OneKeyWifi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B71E41D11D3CE608004306DC /* Build configuration list for PBXProject "OneKeyWifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B71E42041D3CE608004306DC /* Debug */,
+				B71E42051D3CE608004306DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B71E42061D3CE608004306DC /* Build configuration list for PBXNativeTarget "OneKeyWifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B71E42071D3CE608004306DC /* Debug */,
+				B71E42081D3CE608004306DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B71E42091D3CE608004306DC /* Build configuration list for PBXNativeTarget "OneKeyWifiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B71E420A1D3CE608004306DC /* Debug */,
+				B71E420B1D3CE608004306DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B71E420C1D3CE608004306DC /* Build configuration list for PBXNativeTarget "OneKeyWifiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B71E420D1D3CE608004306DC /* Debug */,
+				B71E420E1D3CE608004306DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B71E41E51D3CE608004306DC /* OneKeyWifi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B71E41E61D3CE608004306DC /* OneKeyWifi.xcdatamodel */,
+			);
+			currentVersion = B71E41E61D3CE608004306DC /* OneKeyWifi.xcdatamodel */;
+			path = OneKeyWifi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B71E41CE1D3CE608004306DC /* Project object */;
+}
