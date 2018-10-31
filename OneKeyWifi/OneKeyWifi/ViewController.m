@@ -12,9 +12,16 @@
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import "voiceEncoder.h"
 #import "SmartLink.h"
+#import <Foundation/Foundation.h>
+#include <ifaddrs.h>
+#import "BoSmartLink.h"
+#include <ifaddrs.h>
+#include <arpa/inet.h>
+#import <ifaddrs.h>
 
 @interface ViewController ()
-
+//@property(nonatomic, strong) RACCommand *startBoSmartCommand;  //博通
+@property(nonatomic,strong) NSTimer *SendBoSmartLinkTimer;
 @end
 
 @implementation ViewController
@@ -91,6 +98,10 @@
     
     [SmartLink StopSmartLink];
     
+    [_SendBoSmartLinkTimer invalidate];
+    
+    _SendBoSmartLinkTimer = nil;
+    
     
 }
 
@@ -104,8 +115,73 @@
     [SmartLink StopSmartLink];
     [SmartLink setSmartLink:MyWiFiSSID setAuthmod:@"0" setPassWord:MyPassword.text];
     
+   struct in_addr addr;
+    inet_aton([[self getIPAddress] UTF8String], &addr);
+    ip = CFSwapInt32BigToHost(ntohl(addr.s_addr));
+    
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        self.SendBoSmartLinkTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(StartCooee) userInfo:nil repeats:YES];
+//        [[NSRunLoop currentRunLoop]addTimer:self.SendBoSmartLinkTimer forMode:NSRunLoopCommonModes];
+//    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //[self StartCooee];
+           self.SendBoSmartLinkTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(StartCooee) userInfo:nil repeats:YES];
+    });
+    //[BoSmartLink setBoSmartLink:MyWiFiSSID setLen:(int)strlen([MyWiFiSSID UTF8String]) setPassWord:MyWiFiPwd setPwdLen://(int)strlen([MyWiFiPwd UTF8String]) SetKey:@"" setKeyLen:0 SetIP:ip];
     
 }
+
+-(void)StartCooee {
+    
+    struct in_addr addr;
+    inet_aton([[self getIPAddress] UTF8String], &addr);
+    ip = CFSwapInt32BigToHost(ntohl(addr.s_addr));
+    
+    NSLog(@"MyWiFiSSID %@",MyWiFiSSID);
+    NSLog(@"MyWiFiPwd %@",MyPassword.text);
+    
+     //NSLog(@"WIFISSID:%@,WIFILen:%d,WiFIPWD:%@,WIFIPwdLen:%d,IP:%@",MyWiFiSSID,(int)strlen([MyWiFiSSID UTF8String]),MyWiFiPwd,(int)strlen([MyWiFiPwd UTF8String]),ip);
+    
+    [BoSmartLink setBoSmartLink:MyWiFiSSID setLen:(int)strlen([MyWiFiSSID UTF8String]) setPassWord:MyPassword.text setPwdLen:(int)strlen([MyPassword.text UTF8String]) SetKey:@"" setKeyLen:0 SetIP:ip];
+    
+    
+}
+
+- (NSString *)getIPAddress
+{
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0)
+    {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL)
+        {
+            if(temp_addr->ifa_addr->sa_family == AF_INET)
+            {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"])
+                {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    
+    // Free memory
+    freeifaddrs(interfaces);
+    
+    return address;
+}
+
 
 
 -(void)VoiceThread

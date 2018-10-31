@@ -30,6 +30,8 @@
     
     VoiceEncoder *play;
     
+      unsigned int ip;
+    
     
 }
 
