@@ -252,8 +252,9 @@
 
 - (void)startPlay:(NSTimer *)aTimer {
     @autoreleasepool {
-        
-        [play playWiFi:_mac macLen:1 pwd:MyPassword.text playCount:[[aTimer userInfo] integerValue] muteInterval:8000];
+        MyWiFiPwd = MyPassword.text;
+        NSLog(@"pwd ===%@",(MyWiFiPwd));
+        [play playWiFi:_mac macLen:1 pwd:MyWiFiPwd  playCount:[[aTimer userInfo] integerValue] muteInterval:8000];
         while (![play isStopped]) {
             usleep(600*4000);
         }
