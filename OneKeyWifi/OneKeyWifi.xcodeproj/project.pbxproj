@@ -58,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6C2F0AF9226F03C800205018 /* OneKeyWifi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneKeyWifi.entitlements; sourceTree = "<group>"; };
 		6CD0B9AA218956520011DA73 /* libcooee.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcooee.a; path = OneKeyWifi/libcooee.a; sourceTree = "<group>"; };
 		6CD0B9AC21895E270011DA73 /* BoSmartLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoSmartLink.m; sourceTree = "<group>"; };
 		6CD0B9AD21895E270011DA73 /* BoSmartLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoSmartLink.h; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		B71E41D81D3CE608004306DC /* OneKeyWifi */ = {
 			isa = PBXGroup;
 			children = (
+				6C2F0AF9226F03C800205018 /* OneKeyWifi.entitlements */,
 				B71E42121D3CE91B004306DC /* smartlink */,
 				B71E42101D3CE767004306DC /* libVoiceEncoder.a */,
 				B71E420F1D3CE744004306DC /* voiceEncoder.h */,
@@ -278,7 +280,11 @@
 				TargetAttributes = {
 					B71E41D51D3CE608004306DC = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9XGDE5JWD8;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+						};
 					};
 					B71E41F11D3CE608004306DC = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -506,8 +512,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OneKeyWifi/OneKeyWifi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9XGDE5JWD8;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,7 +526,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OneKeyWifi",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Eye4ZX.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eye4ZX.ios1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -528,8 +535,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OneKeyWifi/OneKeyWifi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9XGDE5JWD8;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -541,7 +549,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OneKeyWifi",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Eye4ZX.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Eye4ZX.ios1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
