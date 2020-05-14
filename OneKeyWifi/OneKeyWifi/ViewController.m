@@ -1,12 +1,3 @@
-//
-//  ViewController.m
-//  OneKeyWifi
-//
-//  Created by 莫晓文 on 16/7/18.
-//  Copyright © 2016年 VSTARTCAM. All rights reserved.
-//
-
-
 
 #import "ViewController.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
@@ -18,10 +9,15 @@
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 #import <ifaddrs.h>
+#import "VSSoundWaveSender.h"
+#import <SystemConfiguration/CaptiveNetwork.h>
+
 
 @interface ViewController ()
 //@property(nonatomic, strong) RACCommand *startBoSmartCommand;  //博通
 @property(nonatomic,strong) NSTimer *SendBoSmartLinkTimer;
+
+@property (nonatomic, strong) VSSoundWaveSender * voiceSender;
 @end
 
 @implementation ViewController
@@ -39,7 +35,7 @@
         freq[i + 1] = freq[i] + 200;
     }
     
-    
+  
     [self createUI];
     
     
@@ -60,21 +56,44 @@
     MyPassword.secureTextEntry = NO;
     [self.view addSubview:MyPassword];
     
-    Sendbtn =[[UIButton alloc]initWithFrame:CGRectMake(35, 194, 85, 45)];
-    [Sendbtn setTitle:@"Send" forState:UIControlStateNormal];
+    Sendbtn =[[UIButton alloc]initWithFrame:CGRectMake(35, 194, 115, 45)];
+    [Sendbtn setTitle:@"Send(play)" forState:UIControlStateNormal];
     [Sendbtn setTintColor:[UIColor whiteColor]];
     [Sendbtn setBackgroundColor:[UIColor blackColor]];
     [Sendbtn addTarget:self action:@selector(PlayVoice) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:Sendbtn];
     
     
-    Cancelbtn =[[UIButton alloc]initWithFrame:CGRectMake(200, 194, 85, 45)];
-    [Cancelbtn setTitle:@"Cancel" forState:UIControlStateNormal];
+    Cancelbtn =[[UIButton alloc]initWithFrame:CGRectMake(200, 194, 115, 45)];
+    [Cancelbtn setTitle:@"Cancel(play)" forState:UIControlStateNormal];
     [Cancelbtn setTintColor:[UIColor whiteColor]];
     [Cancelbtn setBackgroundColor:[UIColor blackColor]];
     [Cancelbtn addTarget:self action:@selector(StopVoice) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:Cancelbtn];
     
+    
+    Sendnewbtn =[[UIButton alloc]initWithFrame:CGRectMake(35, 294, 115, 45)];
+     [Sendnewbtn setTitle:@"Send(play2)" forState:UIControlStateNormal];
+     [Sendnewbtn setTintColor:[UIColor whiteColor]];
+     [Sendnewbtn setBackgroundColor:[UIColor blackColor]];
+     [Sendnewbtn addTarget:self action:@selector(PlaynewVoice) forControlEvents:UIControlEventTouchUpInside];
+     [self.view addSubview:Sendnewbtn];
+    
+    
+    Cancenewlbtn =[[UIButton alloc]initWithFrame:CGRectMake(200, 294, 115, 45)];
+     [Cancenewlbtn setTitle:@"Cancel(play2)" forState:UIControlStateNormal];
+     [Cancenewlbtn setTintColor:[UIColor whiteColor]];
+     [Cancenewlbtn setBackgroundColor:[UIColor blackColor]];
+     [Cancenewlbtn addTarget:self action:@selector(StopnewVoice) forControlEvents:UIControlEventTouchUpInside];
+     [self.view addSubview:Cancenewlbtn];
+    
+    
+    tiptv = [[UITextView alloc]initWithFrame:CGRectMake(20, 370, bounds.size.width-30, 100)];
+    //{"ACT":"Add","ID":"VSTK000000ABCDE","DT":"C24","WiFi":"18"}
+    tiptv.text = @"声波play和play2 使用区别：扫设备的二维码：当WiFi 是18或者19，请使用play2，当WiFi 是0或者1，请使用play，如有疑问，请联系dfc@vstarcam.com";
+
+   // tiptv.attributedText = UITextBorderStyleRoundedRect;
+    [self.view addSubview:tiptv];
 
 }
 
@@ -105,11 +124,22 @@
     
 }
 
+-(void)StopnewVoice
+{
+    if (_voiceSender) {
+        [_voiceSender stopPlaying];
+    }
+    
+    
+}
+
 -(void)PlayVoice
 {   _times = 0;//控制播放次数
     NSThread *voiceThread = [[NSThread alloc]initWithTarget:self selector:@selector(VoiceThread) object:nil];
     _voiceThread = voiceThread;
     [voiceThread start];
+ 
+    
     
     //smartLink
     [SmartLink StopSmartLink];
@@ -131,6 +161,39 @@
     //[BoSmartLink setBoSmartLink:MyWiFiSSID setLen:(int)strlen([MyWiFiSSID UTF8String]) setPassWord:MyWiFiPwd setPwdLen://(int)strlen([MyWiFiPwd UTF8String]) SetKey:@"" setKeyLen:0 SetIP:ip];
     
 }
+
+
+-(void)PlaynewVoice
+{
+    
+    if (!_voiceSender) {
+        _voiceSender = [[VSSoundWaveSender alloc] init];
+    }
+    NSString *userid = @"10000";
+    NSString * wifiMac = [self getWiFiMac];
+     MyWiFiPwd = MyPassword.text;
+    [_voiceSender playWiFiMac:wifiMac password:MyWiFiPwd userId:(userid) playCount:(5)];
+    
+    
+}
+
+-(NSString *)getWiFiMac
+{
+    NSArray *ifs = (__bridge_transfer id)CNCopySupportedInterfaces();
+    id info = nil;
+    for (NSString *ifnam in ifs) {
+        info = (__bridge_transfer id)CNCopyCurrentNetworkInfo((__bridge CFStringRef)ifnam);
+        if (info && [info count]) { break; }
+    }
+    NSDictionary *dctySSID = (NSDictionary *)info;
+    
+    NSString *Bssid = [dctySSID objectForKey:@"BSSID"];//MAC 地址  c8:3a:35:7:34:38
+    return [[NSString alloc] initWithFormat:@"%@", Bssid];
+    
+
+}
+
+
 
 -(void)StartCooee {
     
@@ -193,6 +256,7 @@
     array = [MyWiFiMac componentsSeparatedByString:@":"];
     NSLog(@"array[4]:%@,array[5]%@",array[4],array[5]);
     
+    
     NSString *str1 = [NSString string];
     str1 = array[5];
     
@@ -219,7 +283,7 @@
     }
     astr = [NSString stringWithFormat:@"0x%@",str1];
     yellow = strtoul([astr UTF8String],0,0);
-    
+        NSLog(@"MyWiFiMac%@",MyWiFiMac);
     if (MyWiFiMac) {
         
         [play setFreqs:freq freqCount:19];
@@ -253,8 +317,8 @@
 - (void)startPlay:(NSTimer *)aTimer {
     @autoreleasepool {
         MyWiFiPwd = MyPassword.text;
-        NSLog(@"pwd ===%@",(MyWiFiPwd));
-        [play playWiFi:_mac macLen:1 pwd:MyWiFiPwd  playCount:[[aTimer userInfo] integerValue] muteInterval:8000];
+        NSLog(@"startPlay   pwd ===%@",(MyWiFiPwd));
+        [play playWiFi:_mac macLen:1 pwd:MyWiFiPwd  playCount:[[aTimer userInfo] integerValue] muteInterval:1000];
         while (![play isStopped]) {
             usleep(600*4000);
         }

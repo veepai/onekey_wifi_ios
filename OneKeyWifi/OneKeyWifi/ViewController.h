@@ -1,10 +1,4 @@
-//
-//  ViewController.h
-//  OneKeyWifi
-//
-//  Created by 莫晓文 on 16/7/18.
-//  Copyright © 2016年 VSTARTCAM. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
 
@@ -17,7 +11,11 @@
     UITextField *MyPassword;
     UIButton *Sendbtn;
     UIButton *Cancelbtn;
+    UIButton *Sendnewbtn;
+    UIButton *Cancenewlbtn;
     int *freq;
+    
+    UITextView *tiptv;
     
     NSThread *_voiceThread;// 播放声波的子线程
     NSTimer *_voiceTimesTimer;//播放timer 用来循环播放
@@ -27,6 +25,7 @@
     NSString *MyWiFiSSID;
     NSString *MyWiFiMac;
     NSString *MyWiFiPwd;
+    NSString *allmac;
     
     VoiceEncoder *play;
     

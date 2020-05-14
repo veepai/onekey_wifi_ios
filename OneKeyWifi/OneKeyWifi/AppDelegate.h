@@ -1,10 +1,4 @@
-//
-//  AppDelegate.h
-//  OneKeyWifi
-//
-//  Created by 莫晓文 on 16/7/18.
-//  Copyright © 2016年 VSTARTCAM. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
